@@ -1,0 +1,323 @@
+			<!doctype html>  
+			<html lang="en">
+				
+				<head>
+					<meta charset="utf-8">
+					
+					<title>Introducci&oacute;n a Git</title>
+
+					<meta name="description" content="Sistema de Control de Versiones (VCS) Distribuido">
+					<meta name="author" content="Sergio Puas">
+
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+					
+					<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+					
+					<link rel="stylesheet" href="css/main.css">
+					<link rel="stylesheet" href="css/theme/default.css">
+
+					<!-- For syntax highlighting -->
+					<link rel="stylesheet" href="lib/css/zenburn.css">
+
+					<script>
+						// If the query includes 'print-pdf' we'll use the PDF print sheet
+						document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+					</script>
+
+					<!--[if lt IE 9]>
+					<script src="lib/js/html5shiv.js"></script>
+					<![endif]-->
+				</head>
+				
+				<body>
+					
+					<div class="reveal">
+
+						<div class="state-background"></div>
+						
+						<div class="slides">
+							<section>
+								<h1>Introducci&oacute;n a Git</h1>
+								<h3>Sistema de Control de Versiones (VCS) Distribuido</h3>
+								<p>
+									<i><small>- <a href="mailto://sergio@puas.cl">Sergio Puas</a></small></i>
+								</p>
+			                    <p class="image">
+								  <img width="200" height="180" src="./lib/img/Git-Logo.png">
+								</p>
+							</section>
+							
+							<section>
+								<h2>¿Que es un VCS?</h2>
+								<p>
+									¿Qué es el control de versiones, y por qué debería importarte? El control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Podemos categorizar los VCS en tres tipos:						
+								</p>
+								<strong>Local, Centralizado y Distribuido</strong>
+				
+							</section>
+							
+							<section>
+								<section>
+									<h2>Sistemas de control de versiones locales</h2>
+									<p>El método de control de versiones usado por mucha gente es copiar los archivos a otro directorio, quizás indicando la fecha y hora en que lo hicieron.
+									</p>
+									<p class="image">
+								     <img width="600" height="300" src="./lib/img/local.png">
+								    </p>
+								</section>
+								<section>
+									<h2>Sistemas de control de versiones centralizados</h2>
+									<p>Sistema centralizados para el trabajo colaborativo,todo en un Servidor. 
+										Un claro ejemplo es Subverion.
+									</p>
+									<p class="image">
+								     <img width="600" height="300" src="./lib/img/centralizado.png">
+								    </p>
+								</section>
+								<section>
+									<h2>Sistemas de control de versiones distribuidos</h2>
+									<p>
+										En este tipo de sistema el repositorio es replicado en cada cliente
+										por lo cual la informacion no se encuentra en solo equipo.
+										Es en esta categoria donde se encuentra <strong>GIT</strong>
+									</p>
+									<p class="image">
+								     <img width="600" height="300" src="./lib/img/distribuido.png">
+								    </p>
+								</section>
+							</section>
+
+							<section>
+								<h2>Fundamentos de Git</h2>
+								<p>
+								   La principal diferencias de Git con otros VCS, es que VCS como Subversion van guardando un delta con los cambios en cada archivo. Git por el contrario ocupa snapshots de los archivos la momento del cambio, y para ser mas eficiente, los archivos que no se han modificados, se guarda un puntero o referencia hacia el archivo	
+								</p>
+							</section>
+							<section>
+								<h2>Subversion</h2>
+								<p class="image">
+								     <img width="600" height="300" src="./lib/img/subversion.png">
+								 </p>
+							</section>
+							<section>
+								 <h2>Git</h2>
+								<p class="image">
+								     <img width="600" height="300" src="./lib/img/git.png">
+								 </p>					
+							</section>
+
+							<section>
+								<h2>Operaciones Locales</h2>
+								<p>
+									La gran mayoria de las operaciones con el repositorio se realizan en local
+									por lo que eso le da una ventaja de poder trabajar offline y de mayor velocidad en las operaciones
+								</p>
+								<br/>
+								<h2>Integridad</h2>
+								<p>
+									Git ocupa un hash en SHA-1 para realizar el checksum de los arhivos y asi poder tener integridad entre ellos,cualquier operacion debera pasar por este control.
+								</p>
+							</section>
+
+							<section>
+								<h2>Estados de los archivos</h2>
+								<ol>
+									<li class="fragment">Committed</li>
+									<li class="fragment">Modified</li>
+									<li class="fragment">Staged</li>
+								</ol>  
+								<p class="image">
+								     <img width="600" height="300" src="./lib/img/state.png">
+								 </p>
+							</section>
+							
+							<section>
+								<h2>Ejemplo interactivo de las areas y estados en Git</h2>
+								<p>
+									<a href="http://ndpsoftware.com/git-cheatsheet.html">Git CheatSheet</a>
+								</p>
+							</section>
+
+							<section>
+								<h2>Flujo de Trabajo b&aacute;sico</h2>
+								<ol>
+									<li class="fragment">Modificas una serie de archivos en tu directorio de trabajo.</li>
+									<li class="fragment">Preparas los archivos, añadiendo instantáneas de ellos a tu área de preparación.</li>
+									<li class="fragment">Confirmas los cambios, lo que toma los archivos tal y como están en el área de preparación, y almacena esa instantánea de manera permanente en tu directorio de Git</li>
+								</ol>
+							</section>
+
+							<section>
+								<h2>Instalacion de Git</h2>
+								<ul>
+									<li>
+										<strong>Linux:</strong> <br/>
+										Por medio laherramienta básica de gestión de paquetes que trae cada distribución
+									</li>
+									<li>
+										<strong>Windows:</strong> <br/>
+										http://git-scm.com/download/win
+									</li>
+									<li>
+										<strong>Windows(GUI):</strong> <br/>
+										http://git-scm.com/downloads/guis <br/>
+										http://code.google.com/p/tortoisegit/
+									</li>
+								</ul> 
+							</section>
+
+							<section>
+								<h2>Configurando Git por primera vez</h2>
+								<p>
+			Git trae una herramienta llamada <strong>git config</strong> que te permite obtener y establecer variables de configuración que controlan el aspecto y funcionamiento de Git
+							   </p>
+							</section>
+
+
+
+							<section >
+									<h2>Configurando Tu identidad</h2>
+									<p>
+				Esto es importante porque las confirmaciones de cambios (commits) en Git usan esta información, y es introducida de manera inmutable en los commits que envías
+								   </p>
+								   <pre>
+								   <code>
+	 $ git config --global user.name "John Doe" 
+	 $ git config --global user.email johndoe@example.com 
+	 $ git config --list 
+								   </code>
+							</pre>
+
+								   <p>
+				                    Con este ultimo comando podemos revisar nuestra configuraciones.
+								   </p>
+								</section>
+
+								<section>
+		<h2>Creando un Repositorio</h2>
+		<p>
+		  Para comenzar un projecto git debemos ocupar el comando:
+		</p>
+		<pre>
+		<code>
+	$ git init 
+			</code>
+			</pre>
+		<p>
+			Esto crea un nuevo subdirectorio llamado .git que contiene todos los archivos necesarios del repositorio.
+		</p>
+
+								</section>
+
+
+								<section>
+		<h2>Agregar Archivos a un Repositorio</h2>
+		<p>
+		   Con el comando git add agregar un archivo al seguimiento y/o tambien al staged area.	
+		   Una ves agregados al staged area podemos hacer commit. 
+		</p>
+		<pre>
+		<code>
+	$ git add README 
+	$ git commit -m 'Primer Commit en Git'
+			</code>
+			</pre>
+		<p>
+			Esto realizara un commit a mi repositorio local.
+		</p>
+
+								</section>
+
+								<section>
+		<h2>Clonando un repositorio existente</h2>
+		<p>
+		   Si deseas obtener una copia de un repositorio Git existente —por ejemplo, un proyecto en el que te gustaría contribuir— el comando que necesitas es git clone.
+		</p>
+		<pre>
+		<code>
+	$ git clone git://github.com/schacon/grit.git
+			</code>
+			</pre>
+		<p>
+			Este es el equivalente al checkout de Subversion.
+		</p>
+	</section>
+
+	<section>
+	<h2>Ciclo de vida de los archivos en git</h2>
+	<p class="image">
+	     <img width="600" height="300" src="./lib/img/vida.png">
+	 </p>
+	</section>
+
+
+	<section>
+		<h2>Continuar&aacute;...</h2>
+		<ul>
+			<li> Viendo el histórico de confirmaciones </li>
+			<li> Deshaciendo cosas </li>
+			<li> Trabajando con repositorios remotos </li>
+			<li> Creando etiquetas </li>
+			<li> Ramificaciones en Git </li>
+			<li> ¿Qué es una rama?</li>
+			<li> Procedimientos básicos para ramificar y fusionar</li>
+			<li> Gestión de ramificaciones</li>
+			<li>Flujos de trabajo ramificados</li>
+			<li> Ramas Remotas</li>
+			<li> Reorganizando el trabajo realizado</li>
+			<li> Git en un servidor</li>
+			<li> Los Protocolos</li>
+		</ul>
+	</section>
+
+							<section>
+								<h1>THE END</h1>
+								<p>
+							      Ayuda Adicional:<a href="./git_developer_cheatsheet.pdf">Git Developer CheatSheet</a>		 
+							    </p>		
+							</section>
+						</div>
+
+						<!-- The navigational controls UI -->
+						<aside class="controls">
+							<a class="left" href="#">&#x25C4;</a>
+							<a class="right" href="#">&#x25BA;</a>
+							<a class="up" href="#">&#x25B2;</a>
+							<a class="down" href="#">&#x25BC;</a>
+						</aside>
+
+						<!-- Presentation progress bar -->
+						<div class="progress"><span></span></div>
+						
+					</div>
+
+					<script src="lib/js/head.min.js"></script>
+					<script src="js/reveal.min.js"></script>
+
+					<script>
+						
+						// Full list of configuration options available here:
+						// https://github.com/hakimel/reveal.js#configuration
+						Reveal.initialize({
+							controls: true,
+							progress: true,
+							history: true,
+							
+							transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+							// Optional libraries used to extend on reveal.js
+							dependencies: [
+								{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+								{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+								{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+								{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+								{ src: 'socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+								{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+							]
+						});
+						
+					</script>
+
+				</body>
+			</html>
